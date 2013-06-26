@@ -3,14 +3,14 @@
 
 
 echo "-----> Fetching OpenSSL binaries"
-mkdir vendor/openssl
-cd vendor/openssl
+mkdir $1/vendor/openssl
+cd $1/vendor/openssl
 curl https://moonshot-buildpack-ruby.s3.amazonaws.com/binaries/openssl.tgz -s -o - | tar xzf -
 cd ..
 echo "-----> Got binaries"
 
 echo "-----> Fetching ruby-2.0.0-p195 source"
-mkdir vendor/ruby
+mkdir $1/vendor/ruby
 curl https://moonshot-buildpack-ruby.s3.amazonaws.com/ruby-2.0.0-p195.tar.gz -s -o - | tar xzf -
 
 echo "-----> Configuring build environment"
