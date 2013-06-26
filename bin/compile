@@ -15,7 +15,7 @@ curl https://moonshot-buildpack-ruby.s3.amazonaws.com/ruby-2.0.0-p195.tar.gz -s 
 
 echo "-----> Configuring build environment"
 cd ruby-2.0.0-p195
-./configure --prefix=/app/vendor/ruby --with-openssl-dir=/app/vendor/openssl
+./configure --prefix=/app/vendor/ruby --with-openssl-dir=/app/vendor/openssl --disable-install-doc
 
 echo "-----> Building ruby-2.0.9-p195 with openssl-1.0.1e"
 make install
