@@ -10,6 +10,7 @@ echo "-----> Got binaries"
 
 echo "-----> Fetching ruby-2.0.0-p195 source"
 mkdir /app/vendor/ruby
+cd /app
 curl https://moonshot-buildpack-ruby.s3.amazonaws.com/ruby-2.0.0-p195.tar.gz -s -o - | tar xzf -
 
 echo "-----> Configuring build environment"
