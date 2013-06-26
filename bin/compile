@@ -3,21 +3,21 @@
 
 
 echo "-----> Fetching OpenSSL binaries"
-mkdir /app/vendor/openssl
-cd /app/vendor/openssl
+mkdir vendor/openssl
+cd vendor/openssl
 curl https://moonshot-buildpack-ruby.s3.amazonaws.com/binaries/openssl.tgz -s -o - | tar xzf -
+cd ..
 echo "-----> Got binaries"
 
 echo "-----> Fetching ruby-2.0.0-p195 source"
-mkdir /app/vendor/ruby
-cd /app
+mkdir vendor/ruby
 curl https://moonshot-buildpack-ruby.s3.amazonaws.com/ruby-2.0.0-p195.tar.gz -s -o - | tar xzf -
 
 echo "-----> Configuring build environment"
 cd ruby-2.0.0-p195
-./configure --prefix=/app/vendor/ruby --with-openssl-dir=/app/vendor/openssl --disable-install-doc
+./configure --prefix=$1/vendor/ruby --with-openssl-dir=$1/vendor/openssl --disable-install-doc
 
 echo "-----> Building ruby-2.0.9-p195 with openssl-1.0.1e"
 make install
 
-export PATH=/app/vendor/ruby/bin:$PATH
+export PATH=$1/vendor/ruby/bin:$PATH
