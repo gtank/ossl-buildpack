@@ -18,6 +18,3 @@ curl https://moonshot-buildpack-ruby.s3.amazonaws.com/binaries/ruby.tgz -s -o - 
 #
 #make install
 echo "-----> Got ruby binaries"
-
-export PATH=/app/vendor/ruby/bin:$PATH
-
