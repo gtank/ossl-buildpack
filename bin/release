@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
-echo "--- {}"
+cat << EOF
+---
+default_process_types:
+  web: bundle exec rackup -p $PORT
+EOF
