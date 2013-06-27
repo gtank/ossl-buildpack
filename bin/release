@@ -3,5 +3,5 @@
 cat << EOF
 ---
 default_process_types:
-  web: bundle exec rackup -p $PORT
+  web: bundle exec rackup -p \$PORT
 EOF
