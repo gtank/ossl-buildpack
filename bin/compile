@@ -21,5 +21,5 @@ echo "-----> Got ruby binaries"
 
 BP_DIR=`cd $(dirname $0); cd ..; pwd`
 echo "-----> Copying .profile.d scripts from $BP_DIR"
-echo `ls -a`
-cp -R ${BP_DIR}/.profile.d/* $1/.profile.d/
+mkdir -p $1/.profile.d/
+cp ${BP_DIR}/.profile.d/* $1/.profile.d/
