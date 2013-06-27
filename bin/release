@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
 
-echo "--- {}"
+cat <<EOF
+---
+config_vars:
+  PATH: /app/vendor/ruby/bin:$PATH
+  RUBYLIB: /app/vendor/ruby/lib/ruby/2.0.0/:/app/vendor/ruby/lib/ruby/2.0.0/x86_64-linux/
+  GEM_PATH: /app/vendor/ruby/lib/ruby/gems/2.0.0/
+  LD_LIBRARY_PATH: /app/vendor/openssl/lib/
+EOF
